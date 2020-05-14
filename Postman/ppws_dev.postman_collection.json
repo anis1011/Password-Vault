@@ -1,0 +1,3178 @@
+{
+	"info": {
+		"_postman_id": "f3fd046c-03ba-4170-8aff-8c9f3e94f711",
+		"name": "ppws_dev",
+		"description": "PPWS web api for testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "user lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5555/api/users?page=1&pagesize=10&name=",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"56439b55-64db-11e9-82da-080027eccb22\",\n\t\"name\":\"Anish Maharjan\",\n\t\"email\":\"anish.maharjan@procit.com\",\n\t\"isadminyesno\":1\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5555/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"tester1!\",\n    \"name\": \"anis\",\n    \"email\": \"anis@procit.com\",\n    \"isadminyesno\": 1\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5555/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:5555/api/users?userids7e1ea250-d781-11e8-ab83-032d1fb9c8e3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "userids7e1ea250-d781-11e8-ab83-032d1fb9c8e3",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"486eb0f0-0751-11e9-8a7c-2f0250c8ece7\",\n\t\"newpassword\":\"tester1!\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/users/changepassword",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users",
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/users/dbe0c770-d843-11e8-b65c-772112766be0",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"users",
+								"dbe0c770-d843-11e8-b65c-772112766be0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entity",
+			"item": [
+				{
+					"name": "Add Entity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"entitytypeid\": \"294718a4-e1b6-11e8-85c5-080027f0b698\",\n        \"name\": \"INT - Domain account login Anish Maharjan\",\n        \"masterencodedvalue\": \"test\",\n        \"ipvalue\": \"test\",\n        \"domainvalue\": \"test\",\n        \"usernamevalue\": \"test\",\n        \"passwordvalue\": \"test\",\n        \"urlvalue\": \"test\",\n        \"comment\": \"test\",\n        \"portvalue\": \"test\",\n        \"internalip1\": \"test\",\n        \"internalip2\": \"test\",\n        \"externalip1\": \"test\",\n        \"externalip2\": \"test\",\n        \"wanip1\": \"test\",\n        \"wanip2\": \"test\",\n        \"backuplocation\": null,\n        \"location\": \"test\",\n        \"status\": \"test\",\n        \"dtinstallation\": \"test\",\n        \"member\": \"test\",\n        \"localusers\": \"test\",\n        \"mainboard\": \"test\",\n        \"ram\": \"test\",\n        \"harddrive\": \"test\",\n        \"housing\": \"test\",\n        \"brand\": \"test\",\n        \"pdu\": \"test\",\n        \"pduport\": \"test\",\n        \"sqlsrvversion\": \"test\",\n        \"liveapp\": \"test\",\n        \"testapp\": \"test\",\n        \"livedb\": \"test\",\n        \"testdb\": \"test\",\n        \"radmin\": \"test\",\n        \"vnc\": \"test\",\n        \"rdp\": \"test\",\n        \"ssh\": \"test\",\n        \"virtualhost\": \"test\",\n        \"assetid\": 1\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entities",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity Lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entities?page=1&pagesize=10&name=&projectguid=&groupguid=&entitytypeguid=&radmin=&vnc=&rdp=test&ssh=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "projectguid",
+									"value": ""
+								},
+								{
+									"key": "groupguid",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "radmin",
+									"value": ""
+								},
+								{
+									"key": "vnc",
+									"value": ""
+								},
+								{
+									"key": "rdp",
+									"value": "test"
+								},
+								{
+									"key": "ssh",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EntityById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entities/fefe9400-e8bd-11e8-8020-e3b1252e9f09",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entities",
+								"fefe9400-e8bd-11e8-8020-e3b1252e9f09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update entity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\" : \"fefe9400-e8bd-11e8-8020-e3b1252e9f09\",\n\t\t\"entitytypeid\": 3,\n        \"name\": \"INT - Domain account login Anish Maharjan\",\n        \"masterencodedvalue\": \"test\",\n        \"ipvalue\": \"test\",\n        \"domainvalue\": \"test\",\n        \"usernamevalue\": \"test\",\n        \"passwordvalue\": \"test\",\n        \"urlvalue\": \"test\",\n        \"comment\": \"test\",\n        \"portvalue\": \"test\",\n        \"internalip1\": \"test\",\n        \"internalip2\": \"test\",\n        \"externalip1\": \"test\",\n        \"externalip2\": \"test\",\n        \"wanip1\": \"test\",\n        \"wanip2\": \"test\",\n        \"backuplocation\": \"test\",\n        \"location\": \"test\",\n        \"status\": \"test\",\n        \"dtinstallation\": \"test\",\n        \"member\": \"test\",\n        \"localusers\": \"test\",\n        \"mainboard\": \"test\",\n        \"ram\": \"test\",\n        \"harddrive\": \"test\",\n        \"housing\": \"test\",\n        \"brand\": \"test\",\n        \"pdu\": \"test\",\n        \"pduport\": \"test\",\n        \"sqlsrvversion\": \"test\",\n        \"liveapp\": \"test\",\n        \"testapp\": \"test\",\n        \"livedb\": \"test\",\n        \"testdb\": \"test\",\n        \"radmin\": \"test\",\n        \"vnc\": \"test\",\n        \"rdp\": \"test\",\n        \"ssh\": \"test\",\n        \"virtualhost\": \"test\",\n        \"assetid\": 1\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entities",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entities/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get entitiesbyentitytypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/EntitiesByEntityType?page=1&pagesize=1&entitytype=NT Account",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"EntitiesByEntityType"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "1"
+								},
+								{
+									"key": "entitytype",
+									"value": "NT Account"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dropdown List Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/getdropdownforadmin",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"getdropdownforadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dropdown List User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tst",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"ayush.karki@procit.com\",\n\t\"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImIxNWEyYjhmN2E2YjNmNmJjMDhiYzFjNTZhODg0MTBlMTQ2ZDAxZmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTk3Mjc3MTIxMjM1LWVkc2U0c29hMDE5cG8xamRsNTlrdjNnMGJwbWg1aDdqLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTk3Mjc3MTIxMjM1LWVkc2U0c29hMDE5cG8xamRsNTlrdjNnMGJwbWg1aDdqLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA2ODc3Nzk5MDAxNDY4MzM4MTk4IiwiaGQiOiJwcm9jaXQuY29tIiwiZW1haWwiOiJheXVzaC5rYXJraUBwcm9jaXQuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJvams3SWR0V2JWSnBYaG8yN0RxeEF3IiwibmFtZSI6IkF5dXNoIEthcmtpIC0gSVRIIiwicGljdHVyZSI6Imh0dHBzOi8vbGg0Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tYW9FSzB6YTJ2bTgvQUFBQUFBQUFBQUkvQUFBQUFBQUFBQUEvQUNldm9RTUNkMHlyUlJQckVrdnROa1ZpMDhCM2Q1ZS02US9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiQXl1c2giLCJmYW1pbHlfbmFtZSI6IkthcmtpIC0gSVRIIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1NDg5MzA4NjAsImV4cCI6MTU0ODkzNDQ2MCwianRpIjoiZDZhNTVlZjNlZjdiNDY2ZTdiZWI3YTE2MmJjMjlkNTI0NGUzMWRmYiJ9.rDH57vwVOTYnOIw5zQTtGl5ut-VQBAnjf4pUIXC3QYEiRSg96jI2ASdAxDmthaRKXtFdUCuSFoyIbzaCrvo4sbrZ0ujsg669mvOy-U_PuXMcT2Gy7SXfKCOZU0M89DSphWdhj9JlK7IOGmOulg5wt6kNYT-fXdezE1chlH_tad_GmgLp4Pr5d6hs16JuxWDZ_Gg5GXHtvVtLwd74ZJyHYORrG5cnqoK6QZrerZCq_PEmdurA-KV47KH0p-T6vbZFjDWj0ddwv4hxe0z93kb-vNswUGkgayqMOJeUePSo2933-l9p5HlErIYUOjukH8V22Mc3pJyaw911AJpo6JcTNw\",\n\t\"Password\": \"tester1!\"\n\t\n}"
+						},
+						"url": {
+							"raw": "https://192.168.200.23:5555/api/login",
+							"protocol": "https",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Post Create Groups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"test groups\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groups",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groups?page=1&pagesize=10&description=8",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "description",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single GroupById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groups/dbe0c770-d843-11e8-b65c-772112766be0",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groups",
+								"dbe0c770-d843-11e8-b65c-772112766be0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Update Group",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"78871fd0-d843-11e8-b65c-772112766be0\",\n\t\"description\": \"Updated Group\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groups",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groups/78871fd0-d843-11e8-b65c-772112766be0",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groups",
+								"78871fd0-d843-11e8-b65c-772112766be0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "GetLocations - Retrieve list of locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/locations?page=1&pagesize=10&location=n",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "location",
+									"value": "n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Location- Save new location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\":\"Nashik\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/locations",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location- Update existing location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"f7164140-db69-11e8-bb4f-ed42b855710c\",\n\t\"location\":\"Nepal\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/locations",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location - Remove existing location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/locations/f7164140-db69-11e8-bb4f-ed42b855710c",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"locations",
+								"f7164140-db69-11e8-bb4f-ed42b855710c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location Retrive single location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/locations/86f55560-f20a-11e8-8ffd-29d367881014",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"locations",
+								"86f55560-f20a-11e8-8ffd-29d367881014"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityType",
+			"item": [
+				{
+					"name": "EntityType List - Retrieve entity type list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitytypes?page=1&pagesize=10&name=m",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitytypes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "m"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity Type Single - Retrieve single entity type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitytypes/88f29d80-db78-11e8-af1c-9ba76fb84107",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitytypes",
+								"88f29d80-db78-11e8-af1c-9ba76fb84107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Entity Type - Save new entity type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Email Account\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitytypes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitytypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Entity Type - Update the existing entity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\": \"95082900-dc04-11e8-b1e1-718521e439c6\",\n\t\"name\": \"Router Login\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitytypes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitytypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Entity Type - Remove Exisiting entity type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitytypes/88f29d80-db78-11e8-af1c-9ba76fb84107",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitytypes",
+								"88f29d80-db78-11e8-af1c-9ba76fb84107"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Get Projects - Retrive all the Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projects?page=1&pagesize=10&name=p&description=project",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "p"
+								},
+								{
+									"key": "description",
+									"value": "project"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project - Save new Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"PPWS\",\n\t\"description\": \"Test Project\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projects",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project - Update existing project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\": \"c6e712e0-dc10-11e8-bbcc-471fa853fda2\",\n\t\"name\": \"2Admin\",\n\t\"description\": \"Test description\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projects",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project - Delete Project from an existing lists",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projects/c6e712e0-dc10-11e8-bbcc-471fa853fda2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projects",
+								"c6e712e0-dc10-11e8-bbcc-471fa853fda2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project - Retrieve a single project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projects/e3f4a2f0-dc13-11e8-860f-e9c8326781f4",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projects",
+								"e3f4a2f0-dc13-11e8-860f-e9c8326781f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Add Status - Save new status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\":\"Open 1\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.14:5555/api/statuses",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"14"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"statuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status - Retrieve list of status that matches the status query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/statuses?page=1&pagesize=10&status=o",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"statuses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "o"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get status - Retrieve single status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/statuses/2377c480-dc31-11e8-ab46-4922bc487d2f",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"statuses",
+								"2377c480-dc31-11e8-ab46-4922bc487d2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\" : \"3f24fe10-dc30-11e8-ac62-efdb21b64eb7\",\n\t\"status\" : \"Rejected\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/statuses/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"statuses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete  existing status ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/statuses/3f24fe10-dc30-11e8-ac62-efdb21b64eb7",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"statuses",
+								"3f24fe10-dc30-11e8-ac62-efdb21b64eb7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogAction",
+			"item": [
+				{
+					"name": "Get LogAction - Retrieve list of log actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logactions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add LogAction - Save new Log Action",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"logactionname\":\"add\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logactions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get LogAction - Retrieve a single logaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logactions/80304f60-dcd3-11e8-87bb-7bdf9092af03",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logactions",
+								"80304f60-dcd3-11e8-87bb-7bdf9092af03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing Log action",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\": \"9aa68f90-dcd2-11e8-86a6-e78aac5553a1\",\n\t\"logactionname\":\"edit\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logactions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an existing log action",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityProject",
+			"item": [
+				{
+					"name": "Delete EntityProject",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityprojects/7de338f0-f149-11e8-a5db-fdf2b9702b20",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityprojects",
+								"7de338f0-f149-11e8-a5db-fdf2b9702b20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add EntityProject",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t\t{\n\t\t\"projectid\":\"04ee5722-ed75-11e8-9c06-080027eccb22\",\n\t\t\"entityid\":\"072c9438-ed64-11e8-9c06-080027eccb22\"\n\t},\n\t{\n\t\t\"projectid\":\"15599a66-ed81-11e8-9c06-080027eccb22\",\n\t\t\"entityid\":\"fefe9400-e8bd-11e8-8020-e3b1252e9f09\"\n\t}\n\n]"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityprojects",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityprojects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EntityProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/entityprojects?page=1&pagesize=20&name=&entitytypeguid=&entityguid=&projectguid=520c4e4d-14c3-11e9-b437-080027eccb22&flag=1",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityprojects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "20"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "entityguid",
+									"value": ""
+								},
+								{
+									"key": "projectguid",
+									"value": "520c4e4d-14c3-11e9-b437-080027eccb22"
+								},
+								{
+									"key": "flag",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EntityAllProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityallprojects?page=1&pagesize=10&name=&description=&entityguid=fefe9400-e8bd-11e8-8020-e3b1252e9f09",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityallprojects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "description",
+									"value": ""
+								},
+								{
+									"key": "entityguid",
+									"value": "fefe9400-e8bd-11e8-8020-e3b1252e9f09"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu Items",
+			"item": [
+				{
+					"name": "Get MenuItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/menuitems?page=2&pagesize=10&menuname=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"menuitems"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "menuname",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/menuitems/d11e1c1e-f20e-11e8-9c06-080027eccb22",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"menuitems",
+								"d11e1c1e-f20e-11e8-9c06-080027eccb22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add menu items",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"parentmenuid\":1,\n\t\"menuname\":\"view\",\n\t\"sortorder\": 2,\n\t\"path\": \"/test\",\n\t\"icon\": \"fa-icon\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/menuitems",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"menuitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update menu items",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\": \"61ac5600-ecb5-11e8-925b-2151fd595031\",\n\t\"parentmenuid\":1,\n\t\"menuname\":\"view\",\n\t\"sortorder\": 2,\n\t\"path\": \"/test\",\n\t\"icon\": \"fa-icon\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/menuitems",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"menuitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete menu items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/menuitems/d11e1c1e-f20e-11e8-9c06-080027eccb22",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"menuitems",
+								"d11e1c1e-f20e-11e8-9c06-080027eccb22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityGroup",
+			"item": [
+				{
+					"name": "Add EntityGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\t{\n\t\t\n\t\t\"groupid\":\"785ac700-e1b7-11e8-bc38-03cd7f66ccb8\",\n\t\t\"entityid\":\"072c9438-ed64-11e8-9c06-080027eccb22\"\n\t\t\n\t}\n"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitygroups",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitygroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EntityGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/sentmessages?page=1&pagesize=10&subject=",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"sentmessages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "subject",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EntityGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entitygroups/aaecc34a-e1b6-11e8-85c5-080027f0b698",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entitygroups",
+								"aaecc34a-e1b6-11e8-85c5-080027f0b698"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EntityAllGroups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityallgroups?page=1&pagesize=10&description=88&entityguid=072c9438-ed64-11e8-9c06-080027eccb22",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityallgroups"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "description",
+									"value": "88"
+								},
+								{
+									"key": "entityguid",
+									"value": "072c9438-ed64-11e8-9c06-080027eccb22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupUser",
+			"item": [
+				{
+					"name": "Add Group USer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\n\t\t\"userid\":\"2c324b80-e63c-11e8-8d9d-efe3a0ed1af7\",\n\t\t\"groupid\":\"2b6332c0-f210-11e8-8ffd-29d367881014\"\n\t}\n"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groupusers",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groupusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/entityusers?page=1&pagesize=20&name=&userguid=&entitytypeguid=&flag=1&entityguid=653682c0-14b8-11e9-857e-4713e4ca5e5d",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityusers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "20"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "userguid",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "flag",
+									"value": "1"
+								},
+								{
+									"key": "entityguid",
+									"value": "653682c0-14b8-11e9-857e-4713e4ca5e5d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/groupusers/b75de760-f491-11e8-8dbc-eb7a7799cec3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"groupusers",
+								"b75de760-f491-11e8-8dbc-eb7a7799cec3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProjectUser",
+			"item": [
+				{
+					"name": "Add ProjectUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\t{\n\t\t\"userid\":\"2c324b80-e63c-11e8-8d9d-efe3a0ed1af7\",\n\t\t\"projectid\": \"09c6cd30-d91e-11e8-98f8-ef1af5c8a60a\"\n\t},\n\t{\n\t\t\"userid\":\"fd97e8d0-e8a1-11e8-ae51-b7290378b530\",\n\t\t\"projectid\":\"c6e712e0-dc10-11e8-bbcc-471fa853fda2\"\n\t}\n"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projectusers",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projectusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ProjectUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projectusers?page=1&pagesize=10&name=p&projectguid=&userguid=2c324b80-e63c-11e8-8d9d-efe3a0ed1af7&flag=0",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projectusers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "p"
+								},
+								{
+									"key": "projectguid",
+									"value": ""
+								},
+								{
+									"key": "userguid",
+									"value": "2c324b80-e63c-11e8-8d9d-efe3a0ed1af7"
+								},
+								{
+									"key": "flag",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/projectusers/3ef3caa0-f929-11e8-9bc1-7505b13d6210",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"projectusers",
+								"3ef3caa0-f929-11e8-9bc1-7505b13d6210"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityUser",
+			"item": [
+				{
+					"name": "Add EntityUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\"userid\": \"2c324b80-e63c-11e8-8d9d-efe3a0ed1af7\",\n\t\"entityid\": \"59c7fec6-ed6e-11e8-9c06-080027eccb22\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityusers",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Entityusers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ppwsv2-dev.procit.com:5555/api/entityusers?page=1&pagesize=10&name=&entityguid=49e31710-14bb-11e9-857e-4713e4ca5e5d&userguid=&entitytypeguid=&flag=0",
+							"protocol": "http",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityusers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "entityguid",
+									"value": "49e31710-14bb-11e9-857e-4713e4ca5e5d"
+								},
+								{
+									"key": "userguid",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "flag",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EntityUsers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/entityusers/c33bb230-e1b6-11e8-85c5-080027f0b698",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityusers",
+								"c33bb230-e1b6-11e8-85c5-080027f0b698"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EntityAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ppwsv2-dev.procit.com:5555/api/entityallusers?page=1&pagesize=10&name=test&entityguid=fefe9400-e8bd-11e8-8020-e3b1252e9f09",
+							"protocol": "http",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"entityallusers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "test"
+								},
+								{
+									"key": "entityguid",
+									"value": "fefe9400-e8bd-11e8-8020-e3b1252e9f09"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Userownedentities",
+			"item": [
+				{
+					"name": "Get Entities assigned to the user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/userownedentities?page=1&pagesize=10&name=&entitytypeguid=&groupguid=&projectguid=&flag=1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"userownedentities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "groupguid",
+									"value": ""
+								},
+								{
+									"key": "projectguid",
+									"value": ""
+								},
+								{
+									"key": "flag",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single entity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/userownedentities/009c7910-f491-11e8-8dbc-eb7a7799cec3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"userownedentities",
+								"009c7910-f491-11e8-8dbc-eb7a7799cec3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourite",
+			"item": [
+				{
+					"name": "GET favourite Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/favourites?page=2&pagesize=10&name=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"favourites"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Favourite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Favourite\",\n\t\"username\":\"Favourite\",\n\t\"password\":\"tester123\",\n\t\"description\":\"my Favourite\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/favourites",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Single Favourite by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/favourites/98a269f0-f6e3-11e8-a2cc-cd418df0b061",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"favourites",
+								"98a269f0-f6e3-11e8-a2cc-cd418df0b061"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE edit favourite",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"98a269f0-f6e3-11e8-a2cc-cd418df0b061\",\n\t\"name\":\"Gmail\",\n\t\"username\":\"Tester\",\n\t\"password\":\"0709harry!#\",\n\t\"description\":\"my favourite\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/favourites",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE delete favourite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/favourites/98a269f0-f6e3-11e8-a2cc-cd418df0b061",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"favourites",
+								"98a269f0-f6e3-11e8-a2cc-cd418df0b061"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"item": [
+				{
+					"name": "Post Logout",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ppwsv2-dev.procit.com:5555/api/logout",
+							"protocol": "http",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogEntries",
+			"item": [
+				{
+					"name": "Action log",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logentries?page=1&pagesize=10&entityname=&userguid=&entitytypeguid=&projectguid=&groupguid=&actionguid=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logentries"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "entityname",
+									"value": ""
+								},
+								{
+									"key": "userguid",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "projectguid",
+									"value": ""
+								},
+								{
+									"key": "groupguid",
+									"value": ""
+								},
+								{
+									"key": "actionguid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Action Logs",
+			"item": [
+				{
+					"name": "GET Action Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/logentries?page=1&pagesize=10&entityname=int&userguid=&entitytypeguid=&projectguid=&groupguid=7b9b06d0-ff64-11e8-9298-d5e5ec3feda6&actionguid=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"logentries"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "entityname",
+									"value": "int"
+								},
+								{
+									"key": "userguid",
+									"value": ""
+								},
+								{
+									"key": "entitytypeguid",
+									"value": ""
+								},
+								{
+									"key": "projectguid",
+									"value": ""
+								},
+								{
+									"key": "groupguid",
+									"value": "7b9b06d0-ff64-11e8-9298-d5e5ec3feda6"
+								},
+								{
+									"key": "actionguid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserEntity",
+			"item": [
+				{
+					"name": "Add MyEntity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"key\":\"something@email.com\",\n\t\"value\":\"valueable123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5555/api/userentities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"userentities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update MyEntity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"c69d4790-0a92-11e9-bc03-c1459d85df3a\",\n\t\"name\":\"facebook\",\n\t\"key\":\"something@email.com\",\n\t\"value\":\"valueable15\",\n\t\"description\":\"Additional things here\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/userentities",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"userentities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete MyEntity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.200.23:5555/api/userentities/c69d4790-0a92-11e9-bc03-c1459d85df3a",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"23"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"userentities",
+								"c69d4790-0a92-11e9-bc03-c1459d85df3a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MessageGroups",
+			"item": [
+				{
+					"name": "Add Messagegroups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"ppws\",\n\t\"members\":[\"56439b4b-64db-11e9-82da-080027eccb22\",\"56439b55-64db-11e9-82da-080027eccb22\"]\n}"
+						},
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messagegroups",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messagegroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all messagegroups and users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/getallusersandmessagegroups?page=0&pagesize=0&name=karki&flag =1",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"getallusersandmessagegroups"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pagesize",
+									"value": "0"
+								},
+								{
+									"key": "name",
+									"value": "karki"
+								},
+								{
+									"key": "flag ",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Messagegroups",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guid\":\"d245cfc0-673c-11e9-b847-bfd0d0652a26\",\n\t\"name\":\"test\",\n\t\"members\":[\"d6c0d5cc-6730-11e9-82da-080027eccb22\",\"d6c0d5c7-6730-11e9-82da-080027eccb22\",\"d6c0d5c6-6730-11e9-82da-080027eccb22\"]\n}"
+						},
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messagegroups",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messagegroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET messagegroup by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messagegroups/a6f655b0-675a-11e9-a2b5-e5cc7c8fcd97",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messagegroups",
+								"a6f655b0-675a-11e9-a2b5-e5cc7c8fcd97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Messagegroups",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messagegroups?messagegroupids=655fe170-65b1-11e9-b1db-231691e2015a,d7e13910-675a-11e9-b00f-8987b1e61728",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messagegroups"
+							],
+							"query": [
+								{
+									"key": "messagegroupids",
+									"value": "655fe170-65b1-11e9-b1db-231691e2015a,d7e13910-675a-11e9-b00f-8987b1e61728"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MyEntity",
+			"item": [
+				{
+					"name": "GET myentity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/myentities?page=0&pagesize=0",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"myentities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pagesize",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "GET single message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messages/0015c3f0-6d92-11e9-9a3c-4d43087f54d1",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messages",
+								"0015c3f0-6d92-11e9-9a3c-4d43087f54d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET message list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messages?page=1&pagesize=10&subject=",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "subject",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST send message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipentguids\": {\n        \"userguids\": [\n            \"426edc63-7226-11e9-82da-080027eccb22\",\"bcb436d0-72f2-11e9-abf5-4de90d8adbc2\"\n        ],\n        \"messagegroupguids\": [\n            \"2bc4d500-7318-11e9-bf19-774374ebed90\",\"1a3ebf80-7318-11e9-bf19-774374ebed90\"\n        ]\n    },\n    \"subject\": \"12345\",\n    \"body\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/messages",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sentmessages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/sentmessages?page=1&pagesize=10&subject=",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"sentmessages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "subject",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sentmessage by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ppwsv2-dev.procit.com:5555/api/sentmessages/8d90ca40-6d92-11e9-9a3c-4d43087f54d1",
+							"protocol": "https",
+							"host": [
+								"ppwsv2-dev",
+								"procit",
+								"com"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"sentmessages",
+								"8d90ca40-6d92-11e9-9a3c-4d43087f54d1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
